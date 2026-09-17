@@ -1,0 +1,82 @@
+/* Mind & Heart — Riḍā's teal, copper and ivory palette. */
+:root{--ink:#173f46;--paper:#f7f4ee;--muted:#51666a;--line:#cbd7d5;--gold:#e5b89d;--mind:#174b53;--heart:#9e4b38;--teal-tint:#e7eeeb;--heart-tint:#f1e3db;--white:#fffefa}
+.header{background:rgba(247,244,238,.97)}
+em,.hero h1 em{color:var(--heart)}
+.button{border-radius:6px;background:var(--mind);border-color:var(--mind)}
+.button:hover{background:#245f65}
+.button.outline{color:var(--ink);background:transparent;border-color:#809999}
+.button.light{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.button.light:hover{background:#e5b89d}
+.hero{grid-template-columns:1.07fr 1fr;gap:42px;padding-top:40px}
+.hero-copy{padding-top:28px;padding-left:3%}
+.hero h1{font-size:clamp(54px,5.75vw,88px);line-height:1.06;letter-spacing:-3px}
+.hero .lead{max-width:440px}
+.hero-note{font-size:14px}
+.mind-heart-art{min-height:620px;border-radius:120px 12px 100px 12px;border:1px solid #e1d7cb;background:#f7f3eb;isolation:isolate}
+.mind-heart-art>img{filter:none;object-fit:contain;object-position:center;width:100%;height:100%;inset:0}
+.mind-heart-art:after{display:none}
+.mind-heart-art .image-label{top:27px;left:32px;right:auto;text-align:left;color:var(--mind);font-size:12px;letter-spacing:1.4px;line-height:1.7}
+.mind-heart-art .image-caption{left:32px;bottom:25px;right:auto;color:var(--ink);display:block}
+.mind-heart-art .image-caption>p{font:25px/1.18 var(--serif);letter-spacing:-.3px;margin:0;padding:0}
+.mind-heart-art .image-caption em{color:var(--heart)}
+.utility{background:#173f46;color:#edf3ef}
+.utility a{border-color:#8faaa9}
+.care-strip{background:#e7eeeb;border-color:var(--line)}
+.care-strip i{background:var(--heart)}
+.text-link:hover{color:var(--heart)}
+.topics button:hover,.services .service-card:hover{background:#e4ece8}
+.services .service-card{border-color:#bccfcd;border-radius:5px 5px 32px 5px}
+.services .service-card:nth-child(2n){border-color:#d9c5ba}
+.services .service-card:nth-child(2n):hover{background:#f1e3db}
+.service-number,.context-index{font-size:12px}
+.service-bottom{color:var(--mind)}
+.services .service-card:nth-child(2n) .service-bottom{color:var(--heart)}
+.practitioner{background:#e7eeeb}
+.founder-card{background:#fffefa;border-color:#c4d4d1;border-radius:5px 5px 48px 5px}
+.founder-initials{color:var(--heart)}
+.founder-heading{border-bottom-color:#dbcac0}
+.practitioner-note>span{color:var(--heart)}
+.local-context{background:var(--paper)}
+.context-grid article{border-top-color:#99b4b4}
+.context-grid article:nth-child(2n){border-top-color:#c99983}
+.checkin-invitation{background:var(--heart-tint);border-color:#d7bfb2}
+.checkin-invitation em{color:var(--heart)}
+.nav-checkin{background:#f1e3db;border-color:#d4b8a9}
+.approach,.closing{background:var(--mind)}
+.approach em,.closing em,.service-request-card h2 em{color:var(--gold)}
+.approach .eyebrow,.closing .eyebrow{color:#d9e6e2}
+.approach-intro>p:not(.eyebrow),.principles p,.definition p,.closing>p:not(.eyebrow),.closing>span{color:#d5e2df}
+.principles article{border-color:#62898d}
+.principles article>span,.definition>span{color:var(--gold)}
+.definition{border-color:#62898d}
+.steps span{color:var(--heart)}
+.steps li{border-color:#9bb5b5}
+.practical-panel{background:var(--teal-tint);border-radius:5px 48px 5px 5px}
+.plain-checklist li::marker{color:var(--heart)}
+.visit-banner{background:#f1e3db}
+.service-request-card{background:var(--mind)}
+.service-request-card p{color:#d9e6e2}
+.service-request-card .request-card-note{border-color:#62898d}
+.related-services{background:var(--teal-tint)}
+.guide-aside{background:var(--heart-tint);border-color:#d7bfb2}
+.guide-source{border-color:#d7bfb2}
+.guide-source a{color:var(--ink)}
+.request-summary h2 em{color:var(--heart)}
+.summary-note{border-color:var(--heart)}
+.booking-card{border-color:#c4d4d1;background:#fffefa}
+.booking-card select{background:#fffefa}
+.choice-fieldset label:has(input:checked){background:#e4ece8;border-color:#547c80}
+.calendar-days button[aria-pressed=true]{background:var(--mind);color:#fffefa}
+.date-selection{color:var(--mind)!important}
+.booking-steps button[aria-current] span{background:var(--mind);border-color:var(--mind)}
+.appointment-preview,.message-preview{background:#e7eeeb;border-color:#c4d4d1}
+.handoff-note{background:#e7eeeb;border-color:var(--heart)}
+.checkin-option:focus-within{outline-color:var(--heart)}
+.checkin-controls .button:disabled,#checkin-start:disabled{opacity:.5}
+button:focus-visible,a:focus-visible,summary:focus-visible,select:focus-visible,input:focus-visible{outline-color:var(--heart)}
+.closing a:focus-visible,.approach a:focus-visible,.service-request-card a:focus-visible,.service-request-card button:focus-visible{outline-color:var(--gold)}
+footer{border-top:1px solid #cbd7d5}
+@media(max-width:760px){.hero{grid-template-columns:1fr;gap:28px;padding-top:28px}.hero-copy{padding:8px 0 0}.hero h1{font-size:clamp(48px,10.5vw,76px);letter-spacing:-2px}.hero h1 br{display:block!important}}
+@media(max-width:1100px) and (min-width:761px){.hero{gap:25px}.hero h1{font-size:clamp(52px,6.6vw,74px)}.mind-heart-art{min-height:620px;border-radius:95px 12px 75px 12px}.mind-heart-art .image-label{left:26px;font-size:11px}.mind-heart-art .image-caption{left:26px}.mind-heart-art .image-caption>p{font-size:23px}}
+@media(max-width:760px){.mind-heart-art{min-height:0;max-height:none;height:auto;aspect-ratio:4/5;border-radius:95px 12px 75px 12px}.mind-heart-art .image-label{top:23px;left:27px;font-size:11px;letter-spacing:1px}.mind-heart-art .image-caption{left:27px;bottom:23px}.mind-heart-art .image-caption>p{font-size:23px}}
+@media(max-width:400px){.mind-heart-art .image-label{font-size:10px;left:23px;top:20px}.mind-heart-art .image-caption{left:23px;bottom:19px}.mind-heart-art .image-caption>p{font-size:21px}}

@@ -1,0 +1,16 @@
+import {cpSync,mkdirSync,rmSync,readFileSync,writeFileSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+const root=fileURLToPath(new URL('../',import.meta.url));
+process.chdir(root);
+await import('./render-pages.mjs');
+await import('./render-features.mjs');
+await import('./render-education.mjs');
+await import('./render-ml.mjs');
+await import('./render-story.mjs');
+await import('./render-atmosphere.mjs');
+const {build}=await import('esbuild');
+await build({entryPoints:['src/thread-scene.mjs'],bundle:true,minify:true,format:'esm',target:'es2020',outfile:'public/thread-scene.bundle.mjs',legalComments:'inline'});
+rmSync('dist',{recursive:true,force:true});
+cpSync('public','dist/client',{recursive:true});
+console.log('Built practice pages and assets.');

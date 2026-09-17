@@ -1,0 +1,213 @@
+/* The opening's teal, copper and glass continue into a readable editorial page. */
+.rida-page{--night:#081b23;--deep:#102e36;--copper:#dbac7f;--ivory:#fff0d9}
+.rida-page .header{background:#0b242df2;color:#f5ebdb;border-color:#d1c09a33;box-shadow:0 6px 30px #00121c0d}
+.rida-page .header .brand{color:#f8e9cf}.rida-page .header .brand span{color:#d9b88e;font-size:11px}
+.rida-page .header nav a:hover{color:#e8c398}.rida-page .header .button.small{background:#f3e5ce;border-color:#f3e5ce;color:#163b42}
+.rida-page .header .nav-checkin{background:#26454c;color:#f5e7ce;border-color:#96aca077}
+.rida-page .utility{background:#061a22;color:#d9e2dc;font-size:13px}
+.rida-page .mobile-nav{background:#102e36;color:#f4e8d4;border-color:#64847d}.rida-page .mobile-nav .nav-checkin{background:#f3e5ce;color:#153b43}
+.rida-page .header a:focus-visible,.rida-page .header button:focus-visible,.rida-page .mobile-nav a:focus-visible{outline-color:#efc79a}
+.rida-page footer{background:#091f27;color:#e9e7d8;border-top:1px solid #6e878344;position:relative}
+.rida-page footer .brand{color:#f8e9d4}.rida-page footer p span,.rida-page footer small{color:#b8cac5}
+.rida-page footer>div,.rida-page footer button{font-size:14px}.rida-page footer small{border-color:#7f9b9144;font-size:12px}
+.rida-page .page-motion{position:absolute;right:5%;bottom:19px;min-height:44px;border-bottom:1px solid #8caaa5;font-size:13px}
+.rida-page footer:has(.page-motion){padding-bottom:90px}
+.rida-home main>.section{padding-block:clamp(80px,9vw,145px)}
+.rida-home .section-heading{gap:clamp(32px,6vw,90px);margin-bottom:52px}
+.rida-home .section-heading>p{font-size:17px;line-height:1.8}
+.rida-home .eyebrow{font-size:12px;letter-spacing:2px}
+.rida-home main h2{font-size:clamp(38px,4.6vw,68px);line-height:1.09}
+.rida-home .thread-prologue{background:radial-gradient(ellipse at 68% 32%,#244b4c,#102c35 50%,#071b24 95%);color:#f6eddc}
+.rida-home .thread-hero h1{color:#f8edda}.rida-home .thread-hero h1 em{color:#e0b58f}
+.rida-home .thread-hero .eyebrow{color:#d6e2da}.rida-home .thread-hero .lead{color:#d5e0da;font-size:17px}
+.rida-home .thread-hero .hero-note{color:#bfd0c9}.rida-home .thread-hero .hero-actions .button{background:#f0dec0;color:#163e45;border-color:#f0dec0}
+.rida-home .thread-hero .hero-actions .text-link{color:#e4ebe1;border-color:#b9c6b3}
+.rida-home .thread-hero .thread-cue{color:#bacfc6;border-color:#a0b9ae3d;padding-top:24px}
+.rida-home .thread-stage{border-radius:16px;background:radial-gradient(ellipse at 50% 43%,#e8e1d5,#f5f0e6 70%);box-shadow:0 30px 70px #020e1b66,0 0 0 1px #f2e8ce66;outline:7px solid #8dafa61c;outline-offset:9px}
+.rida-home .thread-stage .image-label{top:20px;left:24px}.rida-home .thread-stage .image-caption{left:24px}
+.rida-home .thread-active .thread-stage{height:100%}
+.rida-home .thread-hero{gap:30px 6%;padding-inline:6%}
+.rida-home .care-strip{background:#183942;color:#e1e9dd;border-color:#c4af8c40;padding-block:27px;gap:40px;font-size:14px}
+.rida-home .care-strip i{background:#d1a778}
+.rida-home .thread-trail .trail-body{stroke-width:3}.rida-home .thread-trail .trail-shine{stroke:#ffe6c3bf}
+/* Atmospheric images move independently of all reading and action areas. */
+.page-art{position:absolute;inset:0;margin:0;pointer-events:none;overflow:hidden;z-index:-1}
+.page-art img{width:100%;height:100%;object-fit:cover;display:block;transform:translateY(var(--art-shift,0px)) scale(1.13);transform-origin:center;will-change:transform}
+.rida-home [data-atmosphere]{position:relative;isolation:isolate}
+.rida-home .checkin-invitation{display:block;min-height:590px;padding:90px 9%;background:#0e2831;color:#fff1dd;border:0}
+.rida-home .page-art--checkin img{object-position:82% 48%}
+.page-art--checkin:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#061d29f7 0%,#08252dec 30%,#09293285 64%,#0617231a 100%)}
+.rida-home .checkin-invitation>div{max-width:550px;position:relative}
+.rida-home .checkin-invitation h2{font-size:clamp(40px,4.5vw,66px);margin-bottom:26px}
+.rida-home .checkin-invitation em{color:#efc699}.rida-home .checkin-invitation p:not(.eyebrow){font-size:17px;color:#dae6dd;max-width:510px;line-height:1.8}
+.rida-home .checkin-invitation .eyebrow{color:#e8c69c;font-size:12px}
+.rida-home .checkin-invitation .button{background:#f3e3c9;border-color:#f3e3c9;color:#153841;margin-top:8px}
+.rida-home .checkin-invitation .checkin-caption{font-size:14px;margin-top:20px}
+.rida-home .checkin-invitation a:focus-visible,.rida-home .checkin-invitation button:focus-visible{outline-color:#ffe2b6}
+.rida-home .support{background:#f7f4ee}
+.rida-home .topics{gap:12px;border:0}
+.rida-home .topics button{border:1px solid #9eb6b270;border-radius:6px;min-height:100px;background:#eaf0eb;font-size:16px;padding:24px;transition:background .2s,border-color .2s,box-shadow .2s}
+.rida-home .topics button:nth-child(3n+2){background:#f0e6dc;border-color:#c8a88d70}
+.rida-home .topics button:hover,.rida-home .topics button:focus-visible{background:#fffaf0;border-color:#9f6f4c;box-shadow:0 12px 25px #203b3310}
+.rida-home .topics span{color:#9c6141}.rida-home .support-footer{padding-top:28px}
+.rida-home .support-footer p{font-size:16px}
+.rida-home .practitioner{background:#e8eee9;align-items:start;gap:8%}
+.rida-home .page-art--practice{inset:50% 50% 0 0;opacity:.14;mask-image:linear-gradient(0deg,#000,transparent)}
+.rida-home .practitioner-intro{position:sticky;top:150px;z-index:1}
+.rida-home .practitioner-intro>p:not(.eyebrow){font-size:17px;line-height:1.8;max-width:440px}
+.rida-home .practitioner-note{border-top:1px solid #b1957477;line-height:1.9}
+.rida-home .founder-card{border:1px solid #bdc7b8;border-radius:12px;padding:44px;box-shadow:0 22px 55px #26473c12;background:#fffcf5}
+.rida-home .founder-heading h3{font-size:40px}.rida-home .founder-card .profile-facts span{font-size:12px}
+.rida-home .founder-heading .eyebrow{font-size:12px;letter-spacing:1.4px}
+/* Services form a series of image planes; every option remains directly accessible. */
+.rida-home .services{background:linear-gradient(140deg,#112d35,#091c25 78%);color:#f6ebda}
+.rida-home .services em{color:#e1b68c}.rida-home .services .eyebrow{color:#d1b58f}
+.rida-home .services .section-heading>p{color:#c9d9d2}
+.rida-home .services .service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;align-items:stretch;perspective:1300px}
+.rida-home .services .service-card{position:relative;isolation:isolate;overflow:hidden;background:#14313a;border:1px solid #abc2b43d;border-radius:10px;min-height:470px;padding:165px 28px 27px;color:#f5e9d4;box-shadow:0 20px 40px #010d174d}
+.rida-home .services .service-card:hover{background:#14313a;border-color:#d0a474}
+.rida-home .service-art,.rida-reading .resource-card .service-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;pointer-events:none}
+.rida-home .service-card:before,.rida-home .guide-preview:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0a2028 0%,#0c252df7 35%,#102f3699 66%,#08212a05 100%);z-index:-1;pointer-events:none}
+.rida-home .service-card h3{font-size:clamp(29px,2.8vw,38px);line-height:1.15;letter-spacing:-.7px;margin-bottom:18px}
+.rida-home .service-card p{font-size:16px;color:#d0e0d9;line-height:1.75}
+.rida-home .service-number{font-size:12px;color:#edc699;margin-bottom:20px;letter-spacing:1.35px}
+.rida-home .services .service-card .service-bottom{font-size:14px;color:#f3d8b2;border-top:1px solid #93ac9d42;margin-top:auto;padding-top:20px;gap:12px}
+.rida-home .service-card a:focus-visible,.rida-home .services a:focus-visible{outline-color:#efc79a}
+/* Kerala becomes a spacious image window with the context kept in front. */
+.rida-home .local-context{background:#152b26;color:#f7eedb;padding-top:210px}
+.page-art--kerala{inset:0 0 30%}.page-art--kerala img{object-position:center 48%}
+.page-art--kerala:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#152b26 0%,#142923ad 50%,#14292344 100%)}
+.rida-home .local-context .eyebrow{color:#e7c395}.rida-home .local-context em{color:#f2c28e}
+.rida-home .local-context .section-heading>p{color:#e2e9dc}
+.rida-home .context-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px}
+.rida-home .context-grid article{padding:30px;border:1px solid #b9c0a33d;border-radius:8px;background:#173329c4;box-shadow:0 12px 24px #00150e1a}
+.rida-home .context-index{color:#e0bd90;font-size:12px;letter-spacing:1px}.rida-home .context-grid h3{font-size:30px;line-height:1.2;margin-top:20px}
+.rida-home .context-grid p{font-size:16px;line-height:1.85;color:#d3e0d2}
+.rida-home .approach{background:#ecece2;color:#173f46;gap:9%}
+.rida-home .approach .eyebrow{color:#69604c}.rida-home .approach em{color:#976343}
+.rida-home .approach-intro>p:not(.eyebrow){font-size:17px;line-height:1.85;color:#425f60}
+.rida-home .approach .text-link{color:#174b53}.rida-home .definition{border-color:#b5b9a5}
+.rida-home .definition>span{color:#9b6a45}.rida-home .definition p{font-size:15px;color:#496063}
+.rida-home .principles article{padding:26px;border:1px solid #a6b7a870;border-radius:8px;margin-bottom:20px;background:#faf8f1;gap:20px;box-shadow:0 16px 30px #34513e0a}
+.rida-home .principles article>span{color:#9d6848;font-size:14px}.rida-home .principles article:first-child{padding-top:26px}
+.rida-home .principles h3{font-size:29px}.rida-home .principles p{font-size:16px;color:#4b6261;line-height:1.8}
+.rida-home .steps{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-block:60px}
+.rida-home .steps li{display:block;padding-top:28px;border-top:2px solid #b08665;position:relative}
+.rida-home .steps li>span{font-size:58px;line-height:1;color:#996647;margin-bottom:25px}
+.rida-home .steps h3{font-size:28px}.rida-home .steps p{font-size:16px;line-height:1.85}
+.rida-home .practical-panel{background:#e5ece5;border-radius:10px;border:1px solid #bbc8b6;padding:40px;box-shadow:0 18px 35px #193d3210}
+.rida-home .visit-banner{min-height:520px;background:#112c33;color:#fff0d9;display:flex;align-items:flex-start;justify-content:center;flex-direction:column;gap:28px}
+.rida-home .visit-banner>div{max-width:540px}.rida-home .visit-banner h2{font-size:clamp(38px,4.5vw,64px)}
+.rida-home .visit-banner .eyebrow{color:#efd0a9}.rida-home .visit-banner em{color:#e9be8e}
+.rida-home .visit-banner p:not(.eyebrow){color:#d9e6da;font-size:17px;line-height:1.8}
+.rida-home .visit-banner .button{color:#fff0d6;border-color:#eed0a1;background:#102e35b3}
+.page-art--visit img{object-position:75% 50%}.page-art--visit:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0b252fef 0%,#0e2e36c7 48%,#102c3422 100%)}
+.rida-home .resources-intro{background:#f7f4ee}
+.rida-home .resources-intro>.button{margin-top:-10px;margin-bottom:40px}
+.guide-preview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px;perspective:1200px}
+.rida-home .guide-preview{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;min-height:350px;padding:35px;border:1px solid #bad0c3;border-radius:10px;color:#f5e6cf;background:#15343c;box-shadow:0 20px 35px #13382c1a}
+.rida-home .guide-preview:before{background:linear-gradient(0deg,#0b242cf7 0%,#0b242cd9 42%,#0b242c08 100%)}
+.guide-preview-category{font-size:12px;letter-spacing:1.5px;color:#e9c89e;margin-bottom:16px;line-height:1.7}
+.rida-home .guide-preview h3{font-size:32px;line-height:1.17;max-width:390px;margin-bottom:24px;color:#fff1dd}
+.guide-preview-action{font-size:14px;border-bottom:1px solid #b49a7b;padding:6px 0;display:flex;gap:32px;align-items:center;min-height:44px}.guide-preview-action>span{font-size:22px}
+.rida-home .faq-section{background:#e7eeea}.rida-home .faq-section>div:first-child{position:sticky;top:155px;align-self:start}
+.rida-home .faqs details{padding:23px 0;border-color:#a8beb2}.rida-home .faqs summary{font-size:17px;line-height:1.6}
+.rida-home .faqs details p{font-size:16px;line-height:1.9;max-width:650px}
+.rida-home .closing{padding-block:120px;min-height:580px;background:#0d272f;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.page-art--closing img{object-position:center 58%;opacity:.56}.page-art--closing:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#061d29f2,#0c26347a 70%,#0b25315c)}
+.rida-home .closing h2{font-size:clamp(42px,5.8vw,80px)}.rida-home .closing em{color:#f0c192}
+.rida-home .closing>p:not(.eyebrow){font-size:18px}.rida-home .contact-routes p{color:#d6e3dc;font-size:15px}.rida-home .closing>span{font-size:14px;letter-spacing:0;color:#d9e5dc}
+.rida-home .urgent{font-size:16px;line-height:1.8;background:#edf0e9;border-top:1px solid #c6cabb;position:relative;z-index:5}
+.rida-home .urgent strong{font-size:16px}.rida-home .urgent p{font-size:14px;color:#355456}
+.rida-home .signature-panel{background:radial-gradient(ellipse at 50% 45%,#294d4b 0%,#102c35 55%,#061d27 100%)}
+/* Related reading pages keep the same artwork beside an uncluttered text column. */
+.rida-reading main>.section:first-child{position:relative;isolation:isolate;overflow:hidden}
+.rida-reading .page-art--reading{inset:0 0 auto auto;width:42%;height:580px;opacity:.21;mask-image:linear-gradient(270deg,#000,transparent 100%),linear-gradient(0deg,transparent,#000 45%);mask-composite:intersect}
+.rida-reading .service-page-heading,.rida-reading main>.section:first-child>h1,.rida-reading main>.section:first-child>.lead{position:relative;max-width:860px}
+.rida-reading .service-page-heading .lead,.rida-reading main>.section:first-child>.lead{color:#375658}
+.rida-reading .service-request-card{border-radius:12px;background:linear-gradient(140deg,#244a4b,#0c2831);border:1px solid #a7b8a651;box-shadow:0 20px 40px #1d352b17}
+.rida-reading .guide-aside{border-radius:12px;box-shadow:0 18px 35px #28423210;background:#ece5d9}
+.rida-reading .resources-grid{gap:28px}
+.rida-reading .resource-card{position:relative;isolation:isolate;overflow:hidden;border:1px solid #a9bcb440;border-radius:12px;padding:170px 32px 32px;background:#102f37;color:#f3e9d8;box-shadow:0 22px 40px #1b38271a}
+.rida-reading .resource-card:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,#102d34 0%,#102d34f7 42%,#102d3400 100%)}
+.rida-reading .resource-card h2{font-size:34px}.rida-reading .resource-card p{color:#d6e4da}.rida-reading .resource-card .eyebrow{color:#e6be8b;font-size:12px}
+.rida-reading .resource-card .text-link{color:#f8ddba;border-color:#d8b184}.rida-reading .resource-card .text-link:focus-visible{outline-color:#ffe0b7}
+.rida-reading .guide-content article{border-color:#b3bdac;padding:34px 0}.rida-reading .guide-number{color:#91633e;font-size:13px}
+/* One-time arrivals and a small pointer tilt. Copy is never gated by animation. */
+.rida-home [data-page-reveal],.rida-reading [data-page-reveal]{transform:perspective(1200px) translateY(var(--arrival-y,0px)) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));transition:transform .7s cubic-bezier(.2,.65,.25,1),border-color .25s,box-shadow .25s;transform-origin:50% 90%}
+.page-effects-playing [data-page-reveal]:not(.is-arrived){--arrival-y:28px}
+.page-effects-playing .services [data-page-reveal]:nth-child(3n+2){transition-delay:.065s}
+.page-effects-playing .services [data-page-reveal]:nth-child(3n+3){transition-delay:.13s}
+.page-effects-paused [data-page-reveal]{transform:none!important;transition:none!important}.page-effects-paused .page-art img{transform:none;will-change:auto}
+@media(min-width:1101px){.rida-home .service-card:nth-child(3n+2){margin-top:28px;margin-bottom:-28px}.rida-home .service-grid{padding-bottom:28px}}
+@media(max-width:1100px){
+ .rida-home .services .service-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+ .rida-home .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:38px}.rida-home .thread-hero{gap:28px 5%;padding-inline:6%}
+ .rida-home .thread-stage .image-label{left:18px;right:15px}.rida-home .thread-stage .image-caption{left:18px}.rida-home .thread-stage .thread-motion{left:18px}.rida-home .thread-stage .intro-replay{right:18px}
+ .rida-home .founder-card{padding:32px}.rida-home .practitioner-intro{position:static}
+ .rida-home .services .service-card{padding-top:170px}
+ .rida-home .checkin-invitation{padding:80px 7%;min-height:560px}.rida-home .checkin-invitation>div{max-width:510px}
+ .rida-home .local-context{padding-top:155px}.rida-home .guide-preview{padding:28px}
+}
+@media(max-width:850px){
+ .rida-home .practitioner{grid-template-columns:1fr}.page-art--practice{display:none}
+ .rida-home .practitioner-intro>p:not(.eyebrow){max-width:610px}.rida-home .founder-card{max-width:none}
+ .rida-home .approach{grid-template-columns:1fr;gap:38px}.rida-home .approach-intro>p:not(.eyebrow){max-width:610px}
+ .rida-home .faq-section{grid-template-columns:1fr;gap:34px}.rida-home .faq-section>div:first-child{position:static}
+}
+@media(max-width:760px){
+ .rida-page .header .brand span{font-size:10px}.rida-page .utility{font-size:12px}
+ .rida-home main>.section{padding-block:70px}.rida-home main h2{font-size:clamp(36px,8.5vw,50px)}
+ .rida-home .section-heading{margin-bottom:32px}.rida-home .section-heading>p{font-size:16px;margin-bottom:0}
+ .rida-home .thread-hero{padding:22px 6% 14px;gap:15px}.rida-home .thread-hero .eyebrow{font-size:12px;letter-spacing:1px}
+ .rida-home .thread-stage{border-radius:10px;outline:4px solid #8dafa61c;outline-offset:4px;box-shadow:0 14px 25px #06141b3d}
+ .rida-home .thread-stage .image-label{display:none}.rida-home .thread-stage .image-caption{left:14px;bottom:44px}
+ .rida-home .thread-stage .thread-phase{font-size:16px}.rida-home .thread-stage .thread-motion{left:14px;bottom:0}
+ .rida-home .thread-stage .intro-replay{right:14px;bottom:0}.rida-home .thread-hero .thread-cue{padding-top:8px!important}
+ .rida-home .thread-hero .hero-actions{padding-top:3px}.rida-home .thread-hero .lead{font-size:16px}
+ .rida-home .care-strip{gap:12px;font-size:13px;flex-wrap:wrap;justify-content:center;padding:23px 6%}.rida-home .care-strip span,.rida-home .care-strip>a{max-width:none}
+ .rida-home .care-strip i:last-of-type{display:none}.rida-home .care-strip>a{flex-basis:100%;text-align:center;margin-top:6px}
+ .rida-home .checkin-invitation{padding:160px 7% 60px;min-height:600px}
+ .page-art--checkin img{object-position:65% 12%}.page-art--checkin:after{background:linear-gradient(0deg,#09232dfc 0%,#09232de8 45%,#08212b26 100%)}
+ .rida-home .checkin-invitation h2{font-size:38px}.rida-home .checkin-invitation p:not(.eyebrow){font-size:16px}.rida-home .checkin-invitation .checkin-caption{font-size:14px}
+ .rida-home .topics button{padding:21px 15px;font-size:16px;gap:10px;min-height:106px}.rida-home .topics{gap:10px}
+ .rida-home .founder-card{padding:28px}.rida-home .founder-heading h3{font-size:35px}
+ .rida-home .services .service-grid{gap:20px}.rida-home .services .service-card{padding:140px 23px 25px;min-height:480px}
+ .rida-home .service-card h3{font-size:31px}.rida-home .service-card h3 br{display:none}.rida-home .service-card p{font-size:16px}
+ .rida-home .service-number{font-size:12px;letter-spacing:1px}.rida-home .services .service-card .service-bottom{font-size:14px}
+ .rida-home main>.local-context{padding-top:140px}.rida-home .context-grid{gap:20px}.rida-home .context-grid article{padding:26px}
+ .rida-home .context-grid h3{font-size:29px}.rida-home .context-grid p{line-height:1.8}
+ .rida-home .principles article{padding:24px;gap:17px}.rida-home .principles article:first-child{padding-top:24px}
+ .rida-home .steps{gap:28px;margin-block:36px}.rida-home .steps li{padding-top:20px}.rida-home .steps li>span{font-size:50px;margin-bottom:20px}
+ .rida-home .practical-panel{padding:28px}.rida-home .visit-banner{padding-top:130px;min-height:610px;gap:26px}
+ .page-art--visit img{object-position:64% 32%}.page-art--visit:after{background:linear-gradient(0deg,#0c2933f5 0%,#0c2933d6 55%,#0c293344 100%)}
+ .rida-home .visit-banner h2{font-size:38px}.rida-home .visit-banner .button{font-size:14px}
+ .guide-preview-grid{gap:20px}.rida-home .guide-preview{padding:26px;min-height:370px}.rida-home .guide-preview h3{font-size:30px}
+ .guide-preview-category{font-size:12px;letter-spacing:1px}.rida-home .closing{padding:100px 7%;min-height:620px}
+ .rida-home .closing h2{font-size:44px}.rida-home .closing h2 br{display:none}.rida-home .closing>p:not(.eyebrow){font-size:17px}
+ .rida-home .urgent{padding:30px 7%;display:block}.rida-home .urgent strong{display:block;margin-bottom:14px}.rida-home .urgent p{font-size:14px;margin-top:10px}
+ .rida-home .support-footer p{font-size:16px}.rida-home .faqs summary{font-size:16px}
+ .rida-reading .resource-card{padding:160px 27px 30px}.rida-reading .resource-card h2{font-size:32px}
+ .rida-reading .page-art--reading{width:80%;height:420px;opacity:.13}
+ .rida-page footer{gap:28px}.rida-page footer small{font-size:12px}.rida-page .page-motion{left:6%;right:auto}
+}
+@media(max-width:600px){
+ .rida-home .services .service-grid,.rida-home .context-grid,.guide-preview-grid{grid-template-columns:1fr}
+ .rida-home .services .service-card{min-height:445px;padding-top:170px}.rida-home .service-card h3{font-size:36px}
+ .rida-home .steps{grid-template-columns:1fr}.rida-home .steps li{padding-left:70px;min-height:155px}.rida-home .steps li>span{position:absolute;left:0;top:24px;font-size:45px}
+ .rida-home .guide-preview{min-height:350px}.rida-home .founder-heading .eyebrow{font-size:12px}
+ .rida-home .thread-hero .hero-actions .button{font-size:14px}.rida-home .thread-hero .hero-actions{gap:14px}
+ .rida-home .thread-hero h1{font-size:clamp(27px,7.9vw,38px)!important}
+}
+html:lang(ml) .rida-home main h2{font-family:system-ui,sans-serif;font-size:clamp(29px,3.5vw,43px);line-height:1.5;letter-spacing:normal}
+html:lang(ml) .rida-home main h3,html:lang(ml) .rida-reading .resource-card h2{font-family:system-ui,sans-serif;font-size:27px;line-height:1.6;letter-spacing:normal}
+html:lang(ml) .rida-home .eyebrow,html:lang(ml) .guide-preview-category,html:lang(ml) .service-number{letter-spacing:normal;line-height:1.8}
+html:lang(ml) .rida-home .service-card p,html:lang(ml) .rida-home .principles p{line-height:1.85}
+html:lang(ml) .rida-home .thread-hero h1{font-size:clamp(26px,4vw,49px)!important;line-height:1.5!important;letter-spacing:normal}
+@media(max-width:760px){html:lang(ml) .rida-home .thread-hero h1{font-size:clamp(24px,6.2vw,32px)!important}html:lang(ml) .rida-home .eyebrow{font-size:12px}html:lang(ml) .rida-home .service-card h3{font-size:29px}html:lang(ml) .rida-home .guide-preview h3{font-size:26px}}
+@media(prefers-reduced-motion:reduce){[data-page-reveal],.page-art img{transform:none!important;transition:none!important;will-change:auto!important}.rida-home .service-card:hover{transform:none}}
+@media(forced-colors:active){
+ .page-art,.service-art{display:none}.rida-home .service-card:before,.rida-home .guide-preview:before,.rida-reading .resource-card:before{display:none}
+ .rida-page .header,.rida-page .utility,.rida-page footer,.rida-home .thread-prologue,.rida-home .care-strip,.rida-home main>.section,.rida-home .checkin-invitation,.rida-home .closing,.rida-home .service-card,.rida-home .guide-preview,.rida-reading .resource-card{background:Canvas;color:CanvasText}
+}
+@media print{.page-art,.service-art,.page-motion{display:none!important}.rida-reading .resource-card{color:#000;background:#fff;box-shadow:none;padding:20px;break-inside:avoid}.rida-reading .resource-card:before{display:none}.rida-reading .resource-card p,.rida-reading .resource-card .text-link,.rida-reading .resource-card .eyebrow{color:#000}.rida-page .header,.rida-page footer{background:#fff;color:#000}[data-page-reveal]{transform:none!important}}

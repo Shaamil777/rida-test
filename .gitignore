@@ -1,0 +1,13 @@
+work/
+outputs/
+.DS_Store
+node_modules/
+.env
+.env.*
+!.env.example
+.local/
+dist/server/
+dist/client/
+dist/.openai/
+
+dist/
