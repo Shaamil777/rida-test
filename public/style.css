@@ -399,3 +399,88 @@
     min-height: 330px !important;
   }
 }
+
+
+/* Enhanced Mobile Team Section Design */
+@media (max-width: 600px) {
+  .team-section { 
+    padding: 60px 6% !important; 
+  }
+  .team-section-header { 
+    margin-bottom: 35px !important; 
+  }
+  .team-section-title { 
+    font-size: clamp(32px, 9vw, 42px) !important; 
+  }
+  .team-layout { 
+    gap: 30px !important; 
+  }
+  .team-images { 
+    max-width: 250px !important; 
+    margin: 0 auto !important; 
+  }
+  
+  /* Flex magic to move arrows up */
+  .team-infos-container {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .team-actions {
+    display: contents !important; /* Allows arrows and button to act as direct children of container */
+  }
+  
+  .team-nav-arrows {
+    order: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    margin-bottom: 25px !important; /* Space between arrows and text */
+    margin-top: -10px !important;
+  }
+  .team-nav-arrows button {
+    width: 55px !important;
+    height: 55px !important;
+  }
+  
+  .team-infos {
+    order: 2 !important;
+    text-align: center !important;
+  }
+  
+  .team-name { 
+    font-size: 32px !important; 
+    margin-bottom: 5px !important;
+  }
+  .team-role { 
+    font-size: 11px !important; 
+    margin-bottom: 20px !important; 
+  }
+  .team-tags { 
+    justify-content: center !important; 
+    margin-bottom: 20px !important;
+  }
+  .team-bio { 
+    font-size: 14px !important; 
+    line-height: 1.6 !important; 
+    margin-bottom: 25px !important; 
+  }
+  .team-stats { 
+    padding: 15px 0 !important;
+    margin-bottom: 25px !important;
+  }
+  .team-stat-value {
+    font-size: 18px !important;
+  }
+  .team-stat-label {
+    font-size: 9px !important;
+  }
+  
+  .team-book-btn { 
+    order: 3 !important;
+    width: 100% !important; 
+    justify-content: center !important; 
+    padding: 18px 20px !important;
+    font-size: 14px !important;
+    margin-top: 10px !important;
+  }
+}
