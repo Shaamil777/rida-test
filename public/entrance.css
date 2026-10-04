@@ -4,7 +4,7 @@ dialog.rida-intro{position:fixed;inset:0;box-sizing:border-box;width:100%;height
 dialog.rida-intro:not([open]){display:none}
 .rida-intro::backdrop{background:transparent}
 .rida-intro:focus{outline:none}
-.intro-scroll-range{position:relative;height:900svh;pointer-events:none}
+.intro-scroll-range{position:relative;height:1400svh;pointer-events:none}
 .intro-scene{position:sticky;top:0;height:100svh;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 50% 43%,#28504f 0%,#102b32 34%,#040e15 83%);opacity:calc(1 - var(--intro-fade,0))}
 .intro-art{position:absolute;inset:0;pointer-events:none;filter:blur(var(--focus-blur,0px));opacity:var(--art-opacity,1);transform:scale(1.03)}
 .intro-art canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .6s}

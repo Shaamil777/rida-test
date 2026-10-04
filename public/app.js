@@ -78,3 +78,31 @@ if(languageSwitch){
  const updateLanguageLink=()=>{const home=location.pathname==='/'||location.pathname==='/ml/';const hash=home&&!sharedHomeAnchors.has(location.hash)?'':location.hash;languageSwitch.href=destination+location.search+hash;};
  updateLanguageLink();window.addEventListener('hashchange',updateLanguageLink);languageSwitch.addEventListener('click',updateLanguageLink);
 }
+
+
+// Intercept clicks on hash links to prevent # in URL for same-page navigation
+document.querySelectorAll('a[href^="#"], a[href^="/#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    try {
+      const url = new URL(this.href, window.location.origin);
+      if (url.pathname === window.location.pathname && url.hash) {
+        const target = document.querySelector(url.hash);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+          target.setAttribute('tabindex', '-1');
+          target.focus({ preventScroll: true });
+        }
+      }
+    } catch(err) {}
+  });
+});
+
+// Remove hash from URL on page load (e.g. when navigating from a subpage back to a homepage section)
+window.addEventListener('load', () => {
+  if (window.location.hash) {
+    setTimeout(() => {
+      history.replaceState(null, null, window.location.pathname + window.location.search);
+    }, 50);
+  }
+});

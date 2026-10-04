@@ -21,7 +21,7 @@ function startEntrance(){
   if(!dialog.open)return;
   const oldMax=maxScroll,progress=dialog.scrollTop/oldMax;
   width=dialog.clientWidth;height=dialog.clientHeight;offset=height*.94;step=height*1.14;
-  brandStop=offset+step*(cards.length-.05);maxScroll=brandStop+height*1.05;
+  brandStop=offset+step*Math.max(0, cards.length-.05);maxScroll=brandStop+height*1.05;
   range.style.height=`${Math.ceil(maxScroll+height)}px`;
   if(oldMax>1)dialog.scrollTop=progress*maxScroll;
   scene?.resize();lastPaint=0;requestFrame();
@@ -29,7 +29,7 @@ function startEntrance(){
  function setAccessible(element,visible){
   if(element.inert===!visible)return;
   // Return focus to the persistent advance control before hiding its old panel.
-  if(!visible&&element.contains(document.activeElement))next.focus({preventScroll:true});
+  if(!visible&&element.contains(document.activeElement))next?.focus({preventScroll:true});
   element.inert=!visible;element.setAttribute('aria-hidden',String(!visible));
  }
  function paint(now){
@@ -76,14 +76,14 @@ function startEntrance(){
    setAccessible(card,i===active&&active>=0&&!brandVisible&&opacity>.6);
   }
   openingCopy.setAttribute('aria-hidden',String(y>height*.3));setAccessible(brand,brandVisible);
-  const label=active<0?'INTRO':brandVisible?'RIḌĀ':String(active+1).padStart(2,'0')+' / 06';
-  if(count.textContent!==label)count.textContent=label;
-  meter.setAttribute('aria-valuenow',String(Math.round(clamp(y/maxScroll)*100)));
+  const label=active<0?'INTRO':brandVisible?'RIḌĀ':cards.length?String(active+1).padStart(2,'0')+' / 06':'INTRO';
+  if(count&&count.textContent!==label)count.textContent=label;
+  meter?.setAttribute('aria-valuenow',String(Math.round(clamp(y/maxScroll)*100)));
   const nextLabel=brandVisible?say('Continue to website','വെബ്‌സൈറ്റിലേക്ക്'):active<0?say('Scroll to explore','താഴേക്ക് നീങ്ങുക'):say('Continue exploring','തുടർന്ന് കാണാം');
-  if(next.firstChild.textContent.trim()!==nextLabel)next.firstChild.textContent=nextLabel+' ';
+  if(next&&next.firstChild.textContent.trim()!==nextLabel)next.firstChild.textContent=nextLabel+' ';
   currentOrbit+=(targetOrbit-currentOrbit)*(paused?1:.075);if(Math.abs(targetOrbit-currentOrbit)<.001)currentOrbit=targetOrbit;
   scene?.updateEntrance(paused?frozenTime:time,paused?0:currentX,paused?0:currentY,paused?frozenStory:story,paused?0:exit,currentOrbit,paused?frozenOpening:opening);
-  turn.hidden=active>=0||art.dataset.fallback==='true';
+  if(turn)turn.hidden=active>=0||art.dataset.fallback==='true';
   if(scrolled&&y>=maxScroll-2){finish(true);return;}
   if(!paused&&(scene||Math.abs(cursor-renderedCursor)>.0005))requestFrame();
  }
@@ -100,8 +100,8 @@ function startEntrance(){
  }
  function setPaused(value){
   if(value){frozenStory=story;frozenTime=time;frozenOpening=opening;}
-  paused=value;dialog.dataset.motion=value?'paused':'playing';motion.setAttribute('aria-pressed',String(value));
-  motion.textContent=value?say('Play motion','ചലനം ആരംഭിക്കുക'):say('Pause motion','ചലനം നിർത്തുക');lastPaint=0;requestFrame();
+  paused=value;dialog.dataset.motion=value?'paused':'playing';motion?.setAttribute('aria-pressed',String(value));
+  if(motion)motion.textContent=value?say('Play motion','ചലനം ആരംഭിക്കുക'):say('Pause motion','ചലനം നിർത്തുക');lastPaint=0;requestFrame();
  }
  function open(){
   if(dialog.open)return;
@@ -126,10 +126,10 @@ function startEntrance(){
   const target=stops.find(stop=>stop>y+height*.15)??brandStop;
   dialog.scrollTo({top:target,behavior:paused?'instant':'smooth'});
  }
- enter.addEventListener('click',()=>finish(true));next.addEventListener('click',continueJourney);skip.addEventListener('click',()=>finish(true));
+ enter.addEventListener('click',()=>finish(true));next?.addEventListener('click',continueJourney);skip?.addEventListener('click',()=>finish(true));
  dialog.addEventListener('cancel',event=>{event.preventDefault();finish();});dialog.addEventListener('close',()=>{if(!closing)finish();});
- replay?.addEventListener('click',open);motion.addEventListener('click',()=>setPaused(!paused));
- turn.addEventListener('click',()=>{turnIndex=(turnIndex+1)%4;targetOrbit=[0,.65,Math.PI,-.65][turnIndex];lastPaint=0;requestFrame();});
+ replay?.addEventListener('click',open);motion?.addEventListener('click',()=>setPaused(!paused));
+ turn?.addEventListener('click',()=>{turnIndex=(turnIndex+1)%4;targetOrbit=[0,.65,Math.PI,-.65][turnIndex];lastPaint=0;requestFrame();});
  dialog.querySelectorAll('[data-intro-destination]').forEach(link=>link.addEventListener('click',()=>finish(false,true)));
  dialog.addEventListener('scroll',()=>{if(dialog.scrollTop>2)scrolled=true;requestFrame();},{passive:true});
  dialog.addEventListener('pointermove',event=>{if(paused||event.pointerType==='touch')return;leanX=clamp(event.clientX/innerWidth)*2-1;leanY=clamp(event.clientY/innerHeight)*2-1;requestFrame();});
