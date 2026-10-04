@@ -130,3 +130,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// Initialize Lenis smooth scrolling
+if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  const script = document.createElement('script');
+  script.src = 'https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js';
+  script.onload = () => {
+    // Override smooth scroll behavior from CSS to prevent conflicts
+    document.documentElement.style.setProperty('scroll-behavior', 'auto', 'important');
+    
+    const lenis = new Lenis({
+      duration: 1.5,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+      smoothTouch: false,
+      wheelMultiplier: 0.85
+    });
+    
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+    
+    // Wire up Lenis to hash links
+    document.querySelectorAll('a[href^="#"], a[href^="/#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        try {
+          const url = new URL(this.href, window.location.origin);
+          if (url.pathname === window.location.pathname && url.hash) {
+            const target = document.querySelector(url.hash);
+            if (target) {
+              e.preventDefault();
+              lenis.scrollTo(target, { duration: 1.5 });
+              target.setAttribute('tabindex', '-1');
+              target.focus({ preventScroll: true });
+            }
+          }
+        } catch(err) {}
+      });
+    });
+  };
+  document.head.appendChild(script);
+}
