@@ -280,3 +280,122 @@
     gap: 0;
   }
 }
+
+
+
+
+/* Enhanced Mobile Hero Design */
+@media (max-width: 760px) {
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 30px 6% 40px !important;
+    background: transparent !important;
+    gap: 0 !important;
+  }
+  .hero-copy {
+    display: contents !important;
+  }
+  .hero-image {
+    display: block !important;
+    order: 1 !important;
+    min-height: 330px !important;
+    width: 100% !important;
+    margin: 0 0 35px 0 !important;
+    border-radius: 20px !important;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05) !important;
+    background: #ffffff !important; /* Set 3D container bg to white */
+    position: relative !important;
+  }
+  .image-label, .image-caption {
+    display: none !important; /* Hide image text for a cleaner look */
+  }
+  .hero h1 {
+    order: 2 !important;
+    text-align: center !important;
+    font-size: clamp(48px, 12vw, 75px) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -2px !important;
+    margin-bottom: 24px !important;
+  }
+  .hero h1 span {
+    display: block !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: clamp(22px, 5.5vw, 28px) !important;
+    letter-spacing: -0.5px !important;
+    margin-bottom: 8px !important;
+  }
+  .hero h1 em {
+    display: block !important;
+    font-size: 1.15em !important;
+  }
+  .hero .lead {
+    order: 3 !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    line-height: 1.75 !important;
+    margin-bottom: 18px !important;
+    max-width: 100% !important;
+  }
+  .hero-actions {
+    order: 4 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 16px !important;
+    margin-top: 15px !important;
+    align-items: center !important;
+  }
+  .hero-actions .button {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 18px 20px !important;
+    border-radius: 8px !important;
+    font-size: 15px !important;
+  }
+  .hero-actions .text-link {
+    margin-top: 10px !important;
+  }
+  .hero-note {
+    order: 5 !important;
+    text-align: center !important;
+    margin-top: 25px !important;
+    font-size: 13px !important;
+  }
+  .hero-foot {
+    display: none !important;
+  }
+}
+
+
+/* Horizontal Scroll for Service Cards on Mobile */
+@media (max-width: 600px) {
+  .services .service-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    padding-bottom: 25px !important;
+    gap: 15px !important;
+    -webkit-overflow-scrolling: touch !important;
+    margin: 0 -6% !important; /* Break out of section padding */
+    padding-left: 6% !important;
+    padding-right: 6% !important;
+    scroll-padding-left: 6% !important;
+  }
+  
+  /* Hide scrollbar for a much cleaner look */
+  .services .service-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+  .services .service-grid {
+    -ms-overflow-style: none !important; 
+    scrollbar-width: none !important;
+  }
+
+  .services .service-card {
+    flex: 0 0 85% !important; /* Show part of the next card to encourage scrolling */
+    scroll-snap-align: start !important;
+    min-height: 330px !important;
+  }
+}
