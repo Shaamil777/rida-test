@@ -484,3 +484,150 @@
     margin-top: 10px !important;
   }
 }
+
+
+/* Horizontal Scroll for Context Grid on Mobile */
+@media (max-width: 600px) {
+  .context-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    padding-bottom: 25px !important;
+    gap: 15px !important;
+    -webkit-overflow-scrolling: touch !important;
+    margin: 0 -6% !important; /* Break out of section padding */
+    padding-left: 6% !important;
+    padding-right: 6% !important;
+    scroll-padding-left: 6% !important;
+  }
+  
+  /* Hide scrollbar for a much cleaner look */
+  .context-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+  .context-grid {
+    -ms-overflow-style: none !important; 
+    scrollbar-width: none !important;
+  }
+
+  .context-grid article {
+    flex: 0 0 85% !important; /* Show part of the next card to encourage scrolling */
+    scroll-snap-align: start !important;
+    border-top: 1px solid #96b2b6 !important;
+    padding-top: 20px !important;
+  }
+}
+
+
+/* Horizontal Scroll for Guide Previews on Mobile */
+@media (max-width: 600px) {
+  .guide-preview-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    padding-bottom: 25px !important;
+    gap: 15px !important;
+    -webkit-overflow-scrolling: touch !important;
+    margin: 0 -6% !important; /* Break out of section padding */
+    padding-left: 6% !important;
+    padding-right: 6% !important;
+    scroll-padding-left: 6% !important;
+  }
+  
+  /* Hide scrollbar for a much cleaner look */
+  .guide-preview-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+  .guide-preview-grid {
+    -ms-overflow-style: none !important; 
+    scrollbar-width: none !important;
+  }
+
+  .guide-preview {
+    flex: 0 0 85% !important; /* Show part of the next card to encourage scrolling */
+    scroll-snap-align: start !important;
+    min-height: 350px !important;
+    height: auto !important;
+  }
+}
+
+
+/* Dark Theme for Contact Section */
+.reach-out {
+  background: var(--ink) !important;
+}
+.reach-out-header h2 {
+  color: #ffffff !important;
+}
+.reach-out-eyebrow {
+  color: #92a4a7 !important;
+}
+.reach-out-badge {
+  border-color: #375b60 !important;
+  color: #c5d4d6 !important;
+}
+.reach-out-badge strong {
+  color: #ffffff !important;
+}
+.info-detail {
+  color: #ffffff !important;
+}
+.info-eyebrow {
+  color: #92a4a7 !important;
+}
+.reach-out-card {
+  background: #1e4d55 !important;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25) !important;
+}
+.reach-out-card h3 {
+  color: #ffffff !important;
+}
+.reach-out-card p {
+  color: #b2c9cb !important;
+}
+.reach-out-form label {
+  color: #ffffff !important;
+}
+.reach-out-form input, 
+.reach-out-form textarea {
+  background: #173f46 !important;
+  border: 1px solid #2d6168 !important;
+  color: #ffffff !important;
+}
+.reach-out-form input:focus, 
+.reach-out-form textarea:focus {
+  border-color: #e5b89d !important;
+}
+.reach-out-form input::placeholder, 
+.reach-out-form textarea::placeholder {
+  color: #5d8186 !important;
+}
+.btn-submit {
+  background: #ffffff !important;
+  color: var(--ink) !important;
+  font-weight: 700 !important;
+}
+.btn-submit:hover {
+  background: #e5b89d !important;
+}
+.btn-primary-pill {
+  background: #2d6168 !important;
+  color: #ffffff !important;
+}
+.btn-secondary-pill {
+  background: transparent !important;
+  border-color: #375b60 !important;
+  color: #ffffff !important;
+}
+
+
+/* Contact options fix */
+.reach-out .info-item,
+.reach-out .info-item span,
+.reach-out .info-item a {
+  color: #ffffff !important;
+}
+.reach-out .info-item svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
