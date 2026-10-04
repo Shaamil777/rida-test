@@ -106,3 +106,27 @@ window.addEventListener('load', () => {
     }, 50);
   }
 });
+
+// Reach Out Form - WhatsApp Integration
+document.addEventListener('DOMContentLoaded', () => {
+  const reachOutForm = document.getElementById('reach-out-form');
+  if (reachOutForm) {
+    reachOutForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const name = document.getElementById('reach-out-name')?.value || '';
+      const email = document.getElementById('reach-out-email')?.value || '';
+      const phone = document.getElementById('reach-out-phone')?.value || '';
+      const msg = document.getElementById('reach-out-msg')?.value || '';
+      
+      let text = `Hello Riḍā by Rahma, I would like to reach out.\n`;
+      if (name) text += `\n*Name:* ${name}`;
+      if (email) text += `\n*Email:* ${email}`;
+      if (phone) text += `\n*Phone:* ${phone}`;
+      if (msg) text += `\n\n*Message:*\n${msg}`;
+      
+      const whatsappUrl = `https://wa.me/918137848571?text=${encodeURIComponent(text)}`;
+      window.open(whatsappUrl, '_blank');
+    });
+  }
+});
