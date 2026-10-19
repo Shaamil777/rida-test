@@ -6,7 +6,6 @@ process.chdir(root);
 await import('./render-pages.mjs');
 await import('./render-features.mjs');
 await import('./render-education.mjs');
-await import('./render-ml.mjs');
 await import('./render-story.mjs');
 await import('./render-atmosphere.mjs');
 const {build}=await import('esbuild');

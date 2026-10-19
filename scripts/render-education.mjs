@@ -11,6 +11,6 @@ page('learn','Learn about clinical psychology','Six short lessons about clinical
 <aside class="learning-editorial"><h2>About these lessons</h2><p>Sources checked 13 September 2026. Prepared for the Riḍā learning centre; practice clinician review is pending. These lessons explain general concepts. They do not assess your mental health, provide individual treatment or qualify you to practise psychology.</p><p>Examples are illustrative, not patient stories. Professional roles and access to care vary by country. For online care, confirm that the clinician can work with you in the location where you will attend.</p></aside></div></div>`,
 '<link rel="stylesheet" href="/education.css?v=1"><script type="module" src="/education.mjs?v=1"></script>');
 const path='public/learn/index.html';let output=readFileSync(path,'utf8');
-output=output.replace('<body>','<body class="learning-page">').replace('href="/ml/learn/" lang="ml" hreflang="ml">മലയാളം</a>','href="/ml/" lang="ml" hreflang="ml">മലയാളം ആദ്യ പേജ്</a>');
+output=output.replace('<body>','<body class="learning-page">');
 writeFileSync(path,output);
 console.log('Rendered six public education lessons and learning checks.');

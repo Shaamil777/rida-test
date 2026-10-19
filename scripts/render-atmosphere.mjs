@@ -5,7 +5,7 @@ const art=(name,kind)=>`<figure class="page-art page-art--${kind}" data-page-dec
 function walk(dir){return readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(`${dir}/${e.name}`):e.name==='index.html'?[`${dir}/${e.name}`]:[]);}
 for(const file of walk('public')){
  if(file.includes('/staff/'))continue;
- let html=readFileSync(file,'utf8');const ml=file.includes('/ml/'),home=file==='public/index.html'||file==='public/ml/index.html';
+ let html=readFileSync(file,'utf8');const ml=false,home=file==='public/index.html';
  const reading=/\/(services|resources|first-visit)\//.test(file);
  html=html.replace(/<figure class="page-art[\s\S]*?<\/figure>/g,'').replace(/<img class="service-art"[^>]*>/g,'').replace(/<div class="guide-preview-grid"[\s\S]*?<!-- end-guide-previews -->/g,'').replace(/<button class="page-motion"[\s\S]*?<\/button>/g,'');
  html=html.replace(/<body([^>]*)>/,(_,attrs)=>{
@@ -21,7 +21,7 @@ for(const file of walk('public')){
    html=html.replace(pattern,(tag)=>tag.replace(/ data-atmosphere="[^"]*"/g,'').replace('>',' data-atmosphere="'+kind+'">')+art(image,kind));
   }
   let serviceIndex=0;html=html.replace(/(<a class="service-card"[^>]*>)/g,(tag)=>tag+`<img class="service-art" src="/intro-${['connection','connection','beginning','clarity','connection','clarity'][serviceIndex++%6]}.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async">`);
-  const previews=`<div class="guide-preview-grid">${resources.map((r,i)=>`<a class="guide-preview" href="${ml?'/ml/':'/'}resources/${r.slug}/"><img class="service-art" src="/intro-${artNames[i]}.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async"><span class="guide-preview-category">${ml?r.categoryMl:r.category}</span><h3>${ml?r.titleMl:r.title}</h3><span class="guide-preview-action">${ml?'വായിക്കാം':'Read the guide'} <span aria-hidden="true">↗</span></span></a>`).join('')}</div><!-- end-guide-previews -->`;
+  const previews=`<div class="guide-preview-grid">${resources.map((r,i)=>`<a class="guide-preview" href="/resources/${r.slug}/"><img class="service-art" src="/intro-${artNames[i]}.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async"><span class="guide-preview-category">${r.category}</span><h3>${r.title}</h3><span class="guide-preview-action">Read the guide <span aria-hidden="true">↗</span></span></a>`).join('')}</div><!-- end-guide-previews -->`;
   html=html.replace(/(<section[^>]*class="[^"]*resources-intro[^"]*"[^>]*>)([\s\S]*?)(<\/section>)/,(_,open,body,close)=>open+body+previews+close);
  }else if(reading){
   let image='beginning';if(file.includes('/services/individual/')||file.includes('/services/couples/')||file.includes('/services/group/')||file.includes('/resources/relationships/')||file.includes('/resources/supporting-a-teen/'))image='connection';
@@ -30,7 +30,7 @@ for(const file of walk('public')){
   html=html.replace(/(<section class="section(?: (?:service-page|guide-page|article-page))?"[^>]*>)/,(open)=>open+art(image,'reading'));
   let index=0;html=html.replace(/(<article class="resource-card">)/g,tag=>tag+`<img class="service-art" src="/intro-${artNames[index++%4]}.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async">`);
  }
- if(home||reading)html=html.replace(/(<footer[^>]*>)/,`$1<button class="page-motion" data-page-motion type="button" aria-pressed="false" hidden>${ml?'ചലനങ്ങൾ നിർത്തുക':'Pause page effects'}</button>`);
+ if(home||reading)html=html.replace(/(<footer[^>]*>)/,`$1<button class="page-motion" data-page-motion type="button" aria-pressed="false" hidden>Pause page effects</button>`);
  writeFileSync(file,html);
 }
 console.log('Extended the intro artwork and depth through the public pages.');

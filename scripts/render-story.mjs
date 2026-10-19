@@ -1,6 +1,6 @@
 import {readFileSync,writeFileSync} from 'node:fs';
 import {renderIntro} from './intro-markup.mjs';
-for(const [file,ml] of [['public/index.html',false],['public/ml/index.html',true]]){
+for(const [file,ml] of [['public/index.html',false]]){
  let html=readFileSync(file,'utf8');
  if(!html.includes('/thread-story.css'))html=html.replace('</head>','<link rel="stylesheet" href="/thread-story.css?v=1"><script type="module" src="/thread-story.mjs?v=1"></script></head>');
  if(!html.includes('class="thread-prologue"')){
@@ -14,7 +14,7 @@ for(const [file,ml] of [['public/index.html',false],['public/ml/index.html',true
    return `<div class="thread-prologue"><section class="hero thread-hero">${body}</section></div>`;
   });
  }
- const signature=`<section class="thread-signature" id="thread-signature-title" aria-labelledby="thread-signature-heading"><div class="signature-panel"><div class="signature-light" aria-hidden="true"></div><p class="eyebrow">${ml?'എല്ലാം ഒരേ കഥയുടെ ഭാഗം':'EVERY PART OF YOU. ONE WHOLE STORY.'}</p><div class="signature-copy"><h2 id="thread-signature-heading" aria-label="Rida by Rahma"><span class="signature-rida">riḍā</span><span class="signature-rahma" lang="en">BY RAHMA</span></h2><p class="signature-note" lang="en">Mind & heart, in conversation.</p></div>${ml?'<p class="signature-translation">മനസ്സും ഹൃദയവും, സംഭാഷണത്തിൽ.</p>':''}<span class="signature-endpoint" aria-hidden="true"></span></div></section>`;
+ const signature=`<section class="thread-signature" id="thread-signature-title" aria-labelledby="thread-signature-heading"><div class="signature-panel"><div class="signature-light" aria-hidden="true"></div><p class="eyebrow">EVERY PART OF YOU MATTERS. TOGETHER THEY TELL YOUR STORY.</p><div class="signature-copy"><h2 id="thread-signature-heading" aria-label="Rida by Rahma"><span class="signature-rida">riḍā</span><span class="signature-rahma" lang="en">BY RAHMA</span></h2><p class="signature-note" lang="en">Mind & heart, in conversation.</p></div><span class="signature-endpoint" aria-hidden="true"></span></div></section>`;
  if(html.includes('class="thread-signature"'))html=html.replace(/<section class="thread-signature"[\s\S]*?<\/section>/,signature);
  else html=html.replace('</main>',signature+'</main>');
  if(!html.includes('/entrance.css'))html=html.replace('</head>','<link rel="stylesheet" href="/entrance.css?v=1"><script type="module" src="/entrance.mjs?v=1"></script></head>');
