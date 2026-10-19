@@ -17,7 +17,7 @@ function paint(){
 function setMotion(){
  const next=reduced.matches||manualPause||root.classList.contains('thread-static');
  if(next!==paused){paused=next;root.classList.toggle('page-effects-playing',!paused);root.classList.toggle('page-effects-paused',paused);}
- if(button){button.hidden=reduced.matches;button.setAttribute('aria-pressed',String(paused));button.textContent=document.documentElement.lang==='ml'?(paused?'ചലനങ്ങൾ ആരംഭിക്കുക':'ചലനങ്ങൾ നിർത്തുക'):(paused?'Play page effects':'Pause page effects');}
+ if(button){button.hidden=reduced.matches;button.setAttribute('aria-pressed',String(paused));button.textContent=paused?'Play page effects':'Pause page effects';}
  if(paused){cancelAnimationFrame(frame);frame=0;for(const card of cards){card.style.removeProperty('--tilt-x');card.style.removeProperty('--tilt-y');}}else requestFrame();
 }
 const arrival=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add('is-arrived');arrival.unobserve(entry.target);}}},{threshold:.08});

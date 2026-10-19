@@ -7,8 +7,8 @@ function startEntrance(){
  const motion=dialog.querySelector('[data-intro-motion]'),next=dialog.querySelector('[data-intro-next]'),turn=dialog.querySelector('[data-intro-turn]');
  const cards=[...dialog.querySelectorAll('[data-orbit-card]')],brand=dialog.querySelector('.intro-brand'),openingCopy=dialog.querySelector('.intro-opening');
  const count=dialog.querySelector('.intro-count'),meter=dialog.querySelector('.intro-meter');
- const reduced=matchMedia('(prefers-reduced-motion: reduce)'),ml=root.lang==='ml',seenKey='rida-orbit-introduction-seen';
- const say=(en,mal)=>ml?mal:en,clamp=x=>Math.max(0,Math.min(1,x)),smooth=x=>{x=clamp(x);return x*x*(3-2*x);};
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)'),seenKey='rida-orbit-introduction-seen';
+ const clamp=x=>Math.max(0,Math.min(1,x)),smooth=x=>{x=clamp(x);return x*x*(3-2*x);};
  let scene=null,loading=null,frame=0,time=0,lastPaint=0,paused=reduced.matches,closing=false,returnFocus=null;
  let width=1,height=1,offset=1,step=1,brandStop=1,maxScroll=1,active=-1,leanX=0,leanY=0,currentX=0,currentY=0;
  let cursor=-1,renderedCursor=-1,story=0,opening=0,frozenStory=0,frozenTime=0,frozenOpening=0,scrolled=false;
@@ -79,7 +79,7 @@ function startEntrance(){
   const label=active<0?'INTRO':brandVisible?'RIḌĀ':cards.length?String(active+1).padStart(2,'0')+' / 06':'INTRO';
   if(count&&count.textContent!==label)count.textContent=label;
   meter?.setAttribute('aria-valuenow',String(Math.round(clamp(y/maxScroll)*100)));
-  const nextLabel=brandVisible?say('Continue to website','വെബ്‌സൈറ്റിലേക്ക്'):active<0?say('Scroll to explore','താഴേക്ക് നീങ്ങുക'):say('Continue exploring','തുടർന്ന് കാണാം');
+  const nextLabel=brandVisible?'Continue to website':active<0?'Scroll to explore':'Continue exploring';
   if(next&&next.firstChild.textContent.trim()!==nextLabel)next.firstChild.textContent=nextLabel+' ';
   currentOrbit+=(targetOrbit-currentOrbit)*(paused?1:.075);if(Math.abs(targetOrbit-currentOrbit)<.001)currentOrbit=targetOrbit;
   scene?.updateEntrance(paused?frozenTime:time,paused?0:currentX,paused?0:currentY,paused?frozenStory:story,paused?0:exit,currentOrbit,paused?frozenOpening:opening);
@@ -101,7 +101,7 @@ function startEntrance(){
  function setPaused(value){
   if(value){frozenStory=story;frozenTime=time;frozenOpening=opening;}
   paused=value;dialog.dataset.motion=value?'paused':'playing';motion?.setAttribute('aria-pressed',String(value));
-  if(motion)motion.textContent=value?say('Play motion','ചലനം ആരംഭിക്കുക'):say('Pause motion','ചലനം നിർത്തുക');lastPaint=0;requestFrame();
+  if(motion)motion.textContent=value?'Play motion':'Pause motion';lastPaint=0;requestFrame();
  }
  function open(){
   if(dialog.open)return;

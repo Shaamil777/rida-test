@@ -164,8 +164,8 @@
  .rida-home .thread-stage .image-label{display:none}.rida-home .thread-stage .image-caption{left:14px;bottom:44px}
  .rida-home .thread-stage .thread-phase{font-size:16px}.rida-home .thread-stage .thread-motion{left:14px;bottom:0}
  .rida-home .thread-stage .intro-replay{right:14px;bottom:0}.rida-home .thread-hero .thread-cue{padding-top:8px!important}
- .rida-home .thread-hero .hero-actions{padding-top:3px}.rida-home .thread-hero .lead{font-size:16px}
- .rida-home .care-strip{gap:12px;font-size:13px;flex-wrap:wrap;justify-content:center;padding:23px 6%}.rida-home .care-strip span,.rida-home .care-strip>a{max-width:none}
+ .rida-home .thread-hero .hero-actions{padding-top:3px}.rida-home .thread-hero .lead{font-size:16px}.rida-home .thread-hero .hero-lead-secondary{display:none!important}
+ .rida-home .care-strip{gap:12px;font-size:13px;flex-wrap:wrap;justify-content:center;padding:26px 6%}.rida-home .care-strip span,.rida-home .care-strip>a{max-width:none}
  .rida-home .care-strip i:last-of-type{display:none}.rida-home .care-strip>a{flex-basis:100%;text-align:center;margin-top:6px}
  .rida-home .checkin-invitation{padding:160px 7% 60px;min-height:600px}
  .page-art--checkin img{object-position:65% 12%}.page-art--checkin:after{background:linear-gradient(0deg,#09232dfc 0%,#09232de8 45%,#08212b26 100%)}
