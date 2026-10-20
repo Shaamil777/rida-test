@@ -3,7 +3,7 @@ import {readFileSync,statSync} from 'node:fs';
 import {resolve,extname,sep} from 'node:path';
 
 const root = resolve('public');
-const types = {'.html':'text/html; charset=utf-8','.js':'text/javascript','.mjs':'text/javascript','.css':'text/css','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.svg':'image/svg+xml','.json':'application/json','.ttf':'font/ttf'};
+const types = {'.html':'text/html; charset=utf-8','.js':'text/javascript','.mjs':'text/javascript','.css':'text/css','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.svg':'image/svg+xml','.json':'application/json','.ttf':'font/ttf','.ico':'image/x-icon'};
 
 createServer((incoming, outgoing) => {
  try {
