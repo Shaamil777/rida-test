@@ -30,7 +30,6 @@ for(const file of walk('public')){
   html=html.replace(/(<section class="section(?: (?:service-page|guide-page|article-page))?"[^>]*>)/,(open)=>open+art(image,'reading'));
   let index=0;html=html.replace(/(<article class="resource-card">)/g,tag=>tag+`<img class="service-art" src="/intro-${artNames[index++%4]}.webp" alt="" width="1536" height="1024" loading="lazy" decoding="async">`);
  }
- if(home||reading)html=html.replace(/(<footer[^>]*>)/,`$1<button class="page-motion" data-page-motion type="button" aria-pressed="false" hidden>Pause page effects</button>`);
  writeFileSync(file,html);
 }
 console.log('Extended the intro artwork and depth through the public pages.');
