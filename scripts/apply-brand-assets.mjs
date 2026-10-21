@@ -8,35 +8,23 @@ const logoDir = path.join(publicDir, 'images', 'logo');
 const favPng = path.join(logoDir, 'favicon.png');
 const ogPng = path.join(logoDir, 'opengraph.png');
 
-console.log('1. Copying favicon.png across all standard locations...');
-const faviconTargets = [
-  path.join(publicDir, 'favicon.png'),
-  path.join(publicDir, 'favicon.ico'),
-  path.join(publicDir, 'favicon-32x32.png'),
-  path.join(publicDir, 'favicon-16x16.png'),
-  path.join(publicDir, 'apple-touch-icon.png'),
-  path.join(publicDir, 'android-chrome-192x192.png'),
-  path.join(publicDir, 'android-chrome-512x512.png'),
-];
-
-for (const target of faviconTargets) {
-  fs.copyFileSync(favPng, target);
-  console.log(`Copied favicon to: ${path.relative(root, target)}`);
+console.log('1. Syncing master favicon.png to public root and logo folder...');
+if (fs.existsSync(favPng) && path.resolve(favPng) !== path.resolve(path.join(publicDir, 'favicon.png'))) {
+  fs.copyFileSync(favPng, path.join(publicDir, 'favicon.png'));
 }
 
-// Convert public/favicon.svg to reference the butterfly or remove old 'R' Georgia SVG
+// Convert public/favicon.svg to reference the butterfly
 const svgFav = path.join(publicDir, 'favicon.svg');
 const favBase64 = fs.readFileSync(favPng).toString('base64');
-const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <image href="data:image/png;base64,${favBase64}" width="100" height="100" preserveAspectRatio="xMidYMid meet"/>
-</svg>`;
+const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <image href="data:image/png;base64,${favBase64}" width="512" height="512"/>
+</svg>\n`;
 fs.writeFileSync(svgFav, svgContent, 'utf8');
 console.log('Updated public/favicon.svg with butterfly emblem.');
 
 console.log('2. Copying opengraph.png to root and optimized...');
 fs.copyFileSync(ogPng, path.join(publicDir, 'opengraph.png'));
 fs.copyFileSync(ogPng, path.join(logoDir, 'opengraph-optimized.png'));
-// Also replace opengraph.jpg with opengraph.png data or copy if allowed
 fs.copyFileSync(ogPng, path.join(logoDir, 'opengraph.jpg'));
 fs.copyFileSync(ogPng, path.join(publicDir, 'opengraph.jpg'));
 console.log('Updated opengraph images in public/ and public/images/logo/');
@@ -63,17 +51,12 @@ const htmlFiles = findHtmlFiles(publicDir);
 for (const file of htmlFiles) {
   let html = fs.readFileSync(file, 'utf8');
 
-  // Replace favicon tags
-  // Replace <link rel="icon" ...> and <link rel="apple-touch-icon" ...>
-  // Ensure primary favicon is /images/logo/favicon.png
-  html = html.replace(/<link\s+rel="icon"\s+type="image\/x-icon"[^>]*>/gi, '');
-  html = html.replace(/<link\s+rel="icon"\s+type="image\/png"\s+sizes="32x32"[^>]*>/gi, '');
-  html = html.replace(/<link\s+rel="icon"\s+type="image\/png"\s+sizes="16x16"[^>]*>/gi, '');
-  html = html.replace(/<link\s+rel="icon"\s+type="image\/png"\s+href="\/images\/logo\/favicon\.png"[^>]*>/gi, '');
+  // Replace old favicon tags
+  html = html.replace(/<link\s+rel="icon"[^>]*>/gi, '');
   html = html.replace(/<link\s+rel="shortcut icon"[^>]*>/gi, '');
   html = html.replace(/<link\s+rel="apple-touch-icon"[^>]*>/gi, '');
 
-  const newFavTags = `<link rel="icon" type="image/png" href="/images/logo/favicon.png"><link rel="shortcut icon" type="image/png" href="/images/logo/favicon.png"><link rel="apple-touch-icon" href="/images/logo/favicon.png">`;
+  const newFavTags = `<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"><link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="/favicon.png"><link rel="shortcut icon" type="image/png" href="/favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">`;
 
   if (html.includes('<link rel="manifest"')) {
     html = html.replace('<link rel="manifest"', `${newFavTags}<link rel="manifest"`);

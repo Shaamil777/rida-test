@@ -1,9 +1,14 @@
 Add-Type -AssemblyName System.Drawing
 
-$srcPath = "$PSScriptRoot\..\public\images\logo\favicon.png"
+$rawPath = "$PSScriptRoot\..\public\images\logo\favicon.png"
+$srcPath = "$PSScriptRoot\..\public\images\logo\favicon-source.png"
 if (-not (Test-Path $srcPath)) {
-    Write-Error "Source image not found at $srcPath"
-    exit 1
+    if (Test-Path $rawPath) {
+        Copy-Item $rawPath $srcPath -Force
+    } else {
+        Write-Error "Source image not found at $srcPath"
+        exit 1
+    }
 }
 
 $srcBmp = [System.Drawing.Bitmap]::FromFile($srcPath)
