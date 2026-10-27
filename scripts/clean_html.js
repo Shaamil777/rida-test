@@ -2,6 +2,7 @@ import fs from 'fs';
 
 const files = [
   'public/appointment/index.html',
+  'public/first-visit/index.html',
   'public/index.html',
   'public/learn/index.html',
   'public/manage/index.html',
@@ -27,7 +28,7 @@ for (const f of files) {
   const isHome = f === 'public/index.html';
   const homeHref = isHome ? '#' : '/#';
 
-  const navLogo = `<a href="${homeHref}" class="brand" aria-label="Rida by Rahma home"><img src="/images/logo/logo1.png" alt="Riḍā by Rahma" class="brand-logo" width="140" height="52"></a>`;
+  const navLogo = `<a href="${homeHref}" class="brand" aria-label="Rida by Rahma home"><img src="/images/logo/logo1.png" alt="Riḍā by Rahma" class="brand-logo" width="148" height="64"></a>`;
   const footLogo = `<a href="${homeHref}" class="brand" aria-label="Rida by Rahma home"><img src="/images/logo/logo.png" alt="Riḍā by Rahma" class="brand-logo" width="160" height="108"></a>`;
 
   // 1. Replace header brand with navLogo
